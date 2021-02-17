@@ -1,8 +1,8 @@
 import express from "express";
-import { startApolloServer } from "./setup/startApolloServer";
-import schemaGraphql from "./setup/schemaGraphql";
+import resolvers from "./graphql/resolvers";
+import typeDefs from "./graphql/typeDefs";
+import { startApolloServer } from "./setup/connectApolloServer";
 
 const app = express();
 
-// start apollo server with express app
-startApolloServer(app, schemaGraphql);
+startApolloServer(app, typeDefs, resolvers);
