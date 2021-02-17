@@ -6,7 +6,7 @@ export const startApolloServer = async (
   app: Express,
   schemaGraphql: object
 ) => {
-  const server = new ApolloServer(schemaGraphql);
+  const server = new ApolloServer({ ...schemaGraphql });
 
   server.applyMiddleware({ app });
 

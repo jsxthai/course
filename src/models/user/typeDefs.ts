@@ -9,9 +9,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    hello: String
-    thai: String
-    users: String
+    users: [User!]!
   }
 
   type Mutation {
