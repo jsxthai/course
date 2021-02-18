@@ -19,13 +19,18 @@ const typeDefs = gql`
     token: String!
   }
 
+  type ResponseRegister {
+    user: User!
+    token: String!
+  }
+
   type Query {
     users: [User]!
     user(id: ID!): User!
   }
 
   type Mutation {
-    register(registerInput: RegisterInput!): User!
+    createUser(registerInput: RegisterInput!): ResponseRegister!
     login(email: String, password: String): ResponseLogin!
   }
 `;
