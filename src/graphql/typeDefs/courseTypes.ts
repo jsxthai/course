@@ -5,7 +5,7 @@ const typeDefs = gql`
     id: ID!
     name: String!
     price: Float!
-    author: ID!
+    authorId: ID
     createdAt: String!
     updatedAt: String!
   }

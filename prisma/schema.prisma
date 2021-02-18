@@ -25,11 +25,11 @@ model Course {
   id         Int        @id @default(autoincrement())
   name       String
   price      Float
-  user       User       @relation(fields: [author], references: [id])
-  author     Int
   categories Category[]
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @default(now())
+  authorId   Int?
+  user       User?      @relation(fields: [authorId], references: [id])
 }
 
 model Category {

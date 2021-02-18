@@ -79,5 +79,23 @@ export default {
         token,
       };
     },
+    deleteUser: async (_: any, args: any) => {
+      const { id } = args;
+
+      try {
+        const deleteUser = await prisma.user.delete({
+          where: {
+            id: Number(id),
+          },
+        });
+      } catch (error) {
+        console.log(error);
+      }
+
+      return {
+        success: true,
+        message: "delete success",
+      };
+    },
   },
 };

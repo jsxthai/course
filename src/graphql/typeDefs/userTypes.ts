@@ -14,14 +14,19 @@ const typeDefs = gql`
     email: String!
   }
 
-  type ResponseLogin {
+  type LoginResponse {
     user: User!
     token: String!
   }
 
-  type ResponseRegister {
+  type CreateUserResponse {
     user: User!
     token: String!
+  }
+
+  type DeleteUserResponse {
+    success: Boolean!
+    message: String!
   }
 
   type Query {
@@ -30,8 +35,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    createUser(registerInput: RegisterInput!): ResponseRegister!
-    login(email: String, password: String): ResponseLogin!
+    createUser(registerInput: RegisterInput!): CreateUserResponse!
+    deleteUser(id: String!): DeleteUserResponse!
+    login(email: String, password: String): LoginResponse!
   }
 `;
 
