@@ -6,4 +6,7 @@ export default {
     ...userResolvers.Query,
     ...courseResolvers.Query,
   },
+  Mutation: {
+    ...userResolvers.Mutation,
+  },
 };
