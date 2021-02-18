@@ -1,19 +1,26 @@
-import { generateToken } from "./../../utils/generateToken";
-import { validateLoginInput } from "./../../utils/validator";
-import prisma from "../../config/prisma";
 import { UserInputError } from "apollo-server-express";
 import bcrypt from "bcrypt";
 import configModel from "../../config/models.json";
+import prisma from "../../config/prisma";
+import { generateToken } from "./../../utils/generateToken";
+import { validateLoginInput } from "./../../utils/validator";
 
 export default {
   Query: {
     users: async () => {
-      return await prisma.user.findMany();
+      return await prisma.user.findMany({
+        include: {
+          courses: true,
+        },
+      });
     },
     user: async (_: any, args: any) => {
       return await prisma.user.findUnique({
         where: {
           id: Number(args.id),
+        },
+        include: {
+          courses: true,
         },
       });
     },
