@@ -44,6 +44,7 @@ export default {
         throw new UserInputError("ERROR", { errors });
       }
 
+      // validate password
       const math = await bcrypt.compare(password, user.password);
       if (!math) {
         errors.general = "Wrong crendetials";
@@ -88,13 +89,62 @@ export default {
             id: Number(id),
           },
         });
+
+        if (deleteUser.email) {
+          return {
+            success: true,
+            message: "delete success",
+          };
+        }
       } catch (error) {
         console.log(error);
+        return {
+          success: false,
+          message: "server delete error",
+        };
+      }
+    },
+    updatePassword: async (_: any, args: any) => {
+      const { email, oldPassword, newPassword } = args;
+
+      const user = await prisma.user.findUnique({
+        where: {
+          email,
+        },
+      });
+
+      if (!user) {
+        throw new UserInputError("ERROR", {
+          errors: {
+            general: "User not found",
+          },
+        });
       }
 
+      // validate password
+      const math = await bcrypt.compare(oldPassword, user.password);
+      if (!math) {
+        throw new UserInputError("ERROR", {
+          errors: {
+            general: "Wrong crendetials",
+          },
+        });
+      }
+
+      const newPasswordHash = await bcrypt.hash(newPassword, 12);
+
+      const updateUser = await prisma.user.update({
+        where: {
+          email,
+        },
+        data: {
+          password: newPasswordHash,
+        },
+      });
+
       return {
-        success: true,
-        message: "delete success",
+        success: updateUser ? true : false,
+        message: updateUser ? "update success" : "update error",
       };
     },
   },

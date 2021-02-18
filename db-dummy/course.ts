@@ -11,4 +11,10 @@ export default [
     price: 10.9,
     authorId: 1,
   },
+  {
+    id: 3,
+    name: "Rust",
+    price: 30.9,
+    authorId: 2,
+  },
 ];

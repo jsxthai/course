@@ -24,7 +24,7 @@ const typeDefs = gql`
     token: String!
   }
 
-  type DeleteUserResponse {
+  type Response {
     success: Boolean!
     message: String!
   }
@@ -36,7 +36,12 @@ const typeDefs = gql`
 
   type Mutation {
     createUser(registerInput: RegisterInput!): CreateUserResponse!
-    deleteUser(id: String!): DeleteUserResponse!
+    deleteUser(id: String!): Response!
+    updatePassword(
+      email: String!
+      oldPassword: String!
+      newPassword: String!
+    ): Response!
     login(email: String, password: String): LoginResponse!
   }
 `;
