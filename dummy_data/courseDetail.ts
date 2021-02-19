@@ -6,7 +6,7 @@ export default [
   },
   {
     id: 2,
-    text: "Các kiến thức cơ bản 2",
+    text: "Tu duy lap trinh",
     courseId: 1,
   },
   {
@@ -18,5 +18,10 @@ export default [
     id: 4,
     text: " cơ bản 2",
     courseId: 2,
+  },
+  {
+    id: 5,
+    text: "Xay dung giao dien",
+    courseId: 1,
   },
 ];

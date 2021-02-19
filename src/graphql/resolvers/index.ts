@@ -1,14 +1,20 @@
-import courseResolvers from "./courseResolvers";
-import userResolvers from "./userResolvers";
-import categoryResolvers from "./categoryResolvers";
+import category from "./category.resolvers";
+import course from "./course.resolvers";
+import courseDetail from "./courseDetail.resolvers";
+import lecture from "./lecture.resolvers";
+import lectureContent from "./lectureContent.resolvers";
+import user from "./user.resolvers";
 
 export default {
   Query: {
-    ...userResolvers.Query,
-    ...courseResolvers.Query,
-    ...categoryResolvers.Query,
+    ...category.Query,
+    ...course.Query,
+    ...courseDetail.Query,
+    ...lecture.Query,
+    ...user.Query,
+    ...lectureContent.Query,
   },
   Mutation: {
-    ...userResolvers.Mutation,
+    ...user.Mutation,
   },
 };

@@ -6,6 +6,7 @@ const typeDefs = gql`
     name: String!
     createdAt: String
     updatedAt: String
+    courses: [Course!]!
   }
 
   extend type Query {

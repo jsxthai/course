@@ -2,8 +2,8 @@ import { UserInputError } from "apollo-server-express";
 import bcrypt from "bcrypt";
 import configModel from "../../config/models.json";
 import prisma from "../../config/prisma";
-import { generateToken } from "./../../utils/generateToken";
-import { validateLoginInput } from "./../../utils/validator";
+import { generateToken } from "../../utils/generateToken";
+import { validateLoginInput } from "../../utils/validator";
 
 export default {
   Query: {

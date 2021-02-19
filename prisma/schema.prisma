@@ -24,22 +24,22 @@ model User {
 }
 
 model Course {
-  id          Int               @id @default(autoincrement())
-  name        String
-  description String?
-  price       Float?
-  image       String?
-  createdAt   DateTime          @default(now())
-  updatedAt   DateTime          @default(now())
-  authorId    Int?
-  user        User?             @relation(fields: [authorId], references: [id])
-  categories  Category?         @relation(fields: [categoryId], references: [id])
-  categoryId  Int?
-  lecture     Lecture[]
-  listLearn   CourseWhatLearn[]
+  id           Int            @id @default(autoincrement())
+  name         String
+  description  String?
+  price        Float?
+  image        String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @default(now())
+  authorId     Int?
+  user         User?          @relation(fields: [authorId], references: [id])
+  categories   Category?      @relation(fields: [categoryId], references: [id])
+  categoryId   Int?
+  lecture      Lecture[]
+  CourseDetail CourseDetail[]
 }
 
-model CourseWhatLearn {
+model CourseDetail {
   id       Int    @id @default(autoincrement())
   text     String
   Course   Course @relation(fields: [courseId], references: [id])
@@ -68,5 +68,6 @@ model Category {
   name      String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-  Course    Course[]
+
+  Course Course[]
 }

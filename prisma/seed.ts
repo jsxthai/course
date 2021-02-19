@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import users from "../dummy_data/user";
 import categories from "../dummy_data/category";
 import courses from "../dummy_data/course";
-import courseWhatLearn from "../dummy_data/courseWhatLearn";
+import courseDetail from "../dummy_data/courseDetail";
 import lectures from "../dummy_data/lecture";
 import lectureContent from "../dummy_data/lectureContent";
 
@@ -24,8 +24,8 @@ async function main() {
   await prisma.lectureContent.createMany({
     data: lectureContent,
   });
-  await prisma.courseWhatLearn.createMany({
-    data: courseWhatLearn,
+  await prisma.courseDetail.createMany({
+    data: courseDetail,
   });
 }
 
