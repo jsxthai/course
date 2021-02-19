@@ -6,6 +6,8 @@ const typeDefs = gql`
     name: String!
     email: String!
     courses: [Course]
+    createdAt: String
+    updatedAt: String
   }
 
   input RegisterInput {
