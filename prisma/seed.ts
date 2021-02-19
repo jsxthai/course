@@ -1,26 +1,32 @@
 import { PrismaClient } from "@prisma/client";
-import users from "../db-dummy/user";
-import categories from "../db-dummy/category";
-import courses from "../db-dummy/course";
+import users from "../dummy_data/user";
+import categories from "../dummy_data/category";
+import courses from "../dummy_data/course";
+import courseWhatLearn from "../dummy_data/courseWhatLearn";
+import lectures from "../dummy_data/lecture";
+import lectureContent from "../dummy_data/lectureContent";
 
 const prisma = new PrismaClient();
 
 async function main() {
-  for (let user of users) {
-    await prisma.user.create({
-      data: user,
-    });
-  }
-  for (let category of categories) {
-    await prisma.category.create({
-      data: category,
-    });
-  }
-  for (let course of courses) {
-    await prisma.course.create({
-      data: course,
-    });
-  }
+  await prisma.user.createMany({
+    data: users,
+  });
+  await prisma.category.createMany({
+    data: categories,
+  });
+  await prisma.course.createMany({
+    data: courses,
+  });
+  await prisma.lecture.createMany({
+    data: lectures,
+  });
+  await prisma.lectureContent.createMany({
+    data: lectureContent,
+  });
+  await prisma.courseWhatLearn.createMany({
+    data: courseWhatLearn,
+  });
 }
 
 main()

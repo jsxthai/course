@@ -6,36 +6,67 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// previewFeatures = ["createMany"]  =>  add features
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["createMany"]
 }
 
 model User {
   id        Int      @id @default(autoincrement())
-  name      String
+  name      String?
   email     String   @unique
   password  String
   role      String
-  courses   Course[]
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+  courses   Course[]
 }
 
 model Course {
-  id         Int        @id @default(autoincrement())
-  name       String
-  price      Float
-  categories Category[]
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @default(now())
-  authorId   Int?
-  user       User?      @relation(fields: [authorId], references: [id])
+  id          Int               @id @default(autoincrement())
+  name        String
+  description String?
+  price       Float?
+  image       String?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @default(now())
+  authorId    Int?
+  user        User?             @relation(fields: [authorId], references: [id])
+  categories  Category?         @relation(fields: [categoryId], references: [id])
+  categoryId  Int?
+  lecture     Lecture[]
+  listLearn   CourseWhatLearn[]
+}
+
+model CourseWhatLearn {
+  id       Int    @id @default(autoincrement())
+  text     String
+  Course   Course @relation(fields: [courseId], references: [id])
+  courseId Int
+}
+
+model Lecture {
+  id       Int              @id @default(autoincrement())
+  text     String
+  content  LectureContent[]
+  Course   Course           @relation(fields: [courseId], references: [id])
+  courseId Int
+}
+
+model LectureContent {
+  id        Int     @id @default(autoincrement())
+  name      String?
+  video     String
+  document  String?
+  Lecture   Lecture @relation(fields: [lectureId], references: [id])
+  lectureId Int
 }
 
 model Category {
   id        Int      @id @default(autoincrement())
   name      String
-  courses   Course[]
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+  Course    Course[]
 }
