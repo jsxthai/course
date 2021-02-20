@@ -15,6 +15,7 @@ export default {
     ...lectureContent.Query,
   },
   Mutation: {
+    ...course.Mutation,
     ...user.Mutation,
   },
 };

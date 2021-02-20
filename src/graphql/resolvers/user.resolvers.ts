@@ -97,10 +97,9 @@ export default {
           };
         }
       } catch (error) {
-        console.log(error);
         return {
           success: false,
-          message: "server delete error",
+          message: error,
         };
       }
     },

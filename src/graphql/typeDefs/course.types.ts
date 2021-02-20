@@ -10,8 +10,19 @@ const typeDefs = gql`
     updatedAt: String!
   }
 
+  input CreateCourseInput {
+    name: String!
+    price: Float
+    authorId: ID!
+  }
+
   extend type Query {
     courses: [Course!]!
+  }
+
+  extend type Mutation {
+    createCourse(data: CreateCourseInput!): Course!
+    deleteCourse(id: ID!): Response!
   }
 `;
 
