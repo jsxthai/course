@@ -2,8 +2,10 @@ import { UserInputError } from "apollo-server-express";
 import bcrypt from "bcrypt";
 import configModel from "../../config/models.json";
 import prisma from "../../config/prisma";
+import serverConfig from "../../config/server.json";
 import { generateToken } from "../../utils/generateToken";
-import { validateLoginInput } from "../../utils/validator";
+import { validateLoginInput } from "../../utils/validatorInput";
+import { authJwt } from "./../../utils/authToken";
 
 export default {
   Query: {
@@ -61,7 +63,10 @@ export default {
     createUser: async (_: any, args: any) => {
       const { name, password, email } = args.registerInput;
 
-      const passwordHash = await bcrypt.hash(password, 12);
+      const passwordHash = await bcrypt.hash(
+        password,
+        serverConfig.bcrypt.saltRounds
+      );
 
       // not yet validate register input
       const user = await prisma.user.create({
@@ -103,12 +108,32 @@ export default {
         };
       }
     },
-    updatePassword: async (_: any, args: any) => {
-      const { email, oldPassword, newPassword } = args;
+    loginWithJWT: async (_: any, __: any, context: any) => {
+      const payload = await authJwt(context);
+      const { id }: { id: number } | any = payload;
 
       const user = await prisma.user.findUnique({
         where: {
-          email,
+          id,
+        },
+      });
+
+      const token = generateToken(user);
+
+      return {
+        user,
+        token,
+      };
+    },
+
+    updatePassword: async (_: any, args: any, context: any) => {
+      const payload = await authJwt(context);
+      const { id }: { id: number } | any = payload;
+
+      const { oldPassword, newPassword } = args;
+      const user = await prisma.user.findUnique({
+        where: {
+          id,
         },
       });
 
@@ -122,6 +147,7 @@ export default {
 
       // validate password
       const math = await bcrypt.compare(oldPassword, user.password);
+
       if (!math) {
         throw new UserInputError("ERROR", {
           errors: {
@@ -130,11 +156,14 @@ export default {
         });
       }
 
-      const newPasswordHash = await bcrypt.hash(newPassword, 12);
+      const newPasswordHash = await bcrypt.hash(
+        newPassword,
+        serverConfig.bcrypt.saltRounds
+      );
 
       const updateUser = await prisma.user.update({
         where: {
-          email,
+          id,
         },
         data: {
           password: newPasswordHash,

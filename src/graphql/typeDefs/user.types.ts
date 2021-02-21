@@ -39,12 +39,9 @@ const typeDefs = gql`
   type Mutation {
     createUser(registerInput: RegisterInput!): CreateUserResponse!
     deleteUser(id: String!): Response!
-    updatePassword(
-      email: String!
-      oldPassword: String!
-      newPassword: String!
-    ): Response!
-    login(email: String, password: String): LoginResponse!
+    updatePassword(oldPassword: String!, newPassword: String!): Response!
+    login(email: String!, password: String!): LoginResponse!
+    loginWithJWT: LoginResponse!
   }
 `;
 

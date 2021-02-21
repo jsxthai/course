@@ -13,11 +13,14 @@ export const startApolloServer = async (
     resolvers,
     introspection: true,
     playground: true,
+    context: ({ req }) => ({ req }),
   });
 
   server.applyMiddleware({ app });
 
   app.listen(Number(PORT), HOST, () =>
-    console.log(`Server ready at ${HOST}:${PORT}${server.graphqlPath}`)
+    console.log(
+      `🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`
+    )
   );
 };
