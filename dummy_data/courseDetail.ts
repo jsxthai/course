@@ -6,22 +6,22 @@ export default [
   },
   {
     id: 2,
-    text: "Tu duy lap trinh",
+    text: "Tạo web app",
     courseId: 1,
   },
   {
     id: 3,
-    text: " cơ bản 1",
+    text: "Code đơn giản",
     courseId: 2,
   },
   {
     id: 4,
-    text: " cơ bản 2",
+    text: "Code nâng cao",
     courseId: 2,
   },
   {
     id: 5,
-    text: "Xay dung giao dien",
+    text: "Giải quyết vấn đề",
     courseId: 1,
   },
 ];

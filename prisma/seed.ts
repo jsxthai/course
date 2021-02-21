@@ -9,24 +9,28 @@ import lectureContent from "../dummy_data/lectureContent";
 const prisma = new PrismaClient();
 
 async function main() {
-  await prisma.user.createMany({
-    data: users,
-  });
-  await prisma.category.createMany({
-    data: categories,
-  });
-  await prisma.course.createMany({
-    data: courses,
-  });
-  await prisma.lecture.createMany({
-    data: lectures,
-  });
-  await prisma.lectureContent.createMany({
-    data: lectureContent,
-  });
-  await prisma.courseDetail.createMany({
-    data: courseDetail,
-  });
+  try {
+    await prisma.user.createMany({
+      data: users,
+    });
+    await prisma.category.createMany({
+      data: categories,
+    });
+    await prisma.course.createMany({
+      data: courses,
+    });
+    await prisma.lecture.createMany({
+      data: lectures,
+    });
+    await prisma.lectureContent.createMany({
+      data: lectureContent,
+    });
+    await prisma.courseDetail.createMany({
+      data: courseDetail,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 main()

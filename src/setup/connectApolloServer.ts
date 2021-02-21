@@ -1,7 +1,6 @@
 import { ApolloServer, IResolvers } from "apollo-server-express";
 import { Express } from "express";
 import { DocumentNode } from "graphql";
-import { PORT, HOST } from "../config/env";
 
 export const startApolloServer = async (
   app: Express,
@@ -17,10 +16,4 @@ export const startApolloServer = async (
   });
 
   server.applyMiddleware({ app });
-
-  app.listen(Number(PORT), HOST, () =>
-    console.log(
-      `🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`
-    )
-  );
 };

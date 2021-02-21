@@ -1,5 +1,5 @@
-import { authJwt } from "./../../utils/authToken";
 import prisma from "../../config/prisma";
+import { authJwt } from "./../../utils/authToken";
 
 export default {
   Query: {

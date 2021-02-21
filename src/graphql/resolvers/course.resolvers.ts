@@ -1,6 +1,5 @@
-import { authJwt } from "./../../utils/authToken";
-import { clearScreenDown } from "readline";
 import prisma from "../../config/prisma";
+import { authJwt } from "./../../utils/authToken";
 
 export default {
   Query: {

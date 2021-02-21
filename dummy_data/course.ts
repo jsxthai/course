@@ -4,7 +4,7 @@ export default [
     name: "Java",
     price: 22.9,
     authorId: 1,
-    description: "is course the best",
+    description: "Java course",
     categoryId: 1,
   },
   {
@@ -12,7 +12,7 @@ export default [
     name: "Python",
     price: 10.9,
     authorId: 1,
-    description: "is course the best",
+    description: "Is python course",
     categoryId: 2,
   },
   {
@@ -20,7 +20,7 @@ export default [
     name: "Rust",
     price: 30.9,
     authorId: 2,
-    description: "is course the best",
+    description: "Is rust course",
     categoryId: 2,
   },
 ];
