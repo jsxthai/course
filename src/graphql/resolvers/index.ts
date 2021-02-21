@@ -16,6 +16,7 @@ export default {
   },
   Mutation: {
     ...course.Mutation,
+    ...lecture.Mutation,
     ...user.Mutation,
   },
 };
