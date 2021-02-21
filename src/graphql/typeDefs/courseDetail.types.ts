@@ -8,6 +8,12 @@ export default gql`
   }
 
   extend type Query {
-    getCourseDetail(courseId: ID!): [CourseDetail!]!
+    courseDetail(courseId: ID!): [CourseDetail!]!
+  }
+
+  extend type Mutation {
+    createCourseDetail(courseId: ID!, text: String!): Response!
+    updateCourseDetail(id: ID!, text: String): Response!
+    deleteCourseDetail(id: ID!): Response!
   }
 `;

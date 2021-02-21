@@ -17,7 +17,7 @@ export default {
   Mutation: {
     ...category.Mutation,
     ...course.Mutation,
-    // ...courseDetail.Mutation,
+    ...courseDetail.Mutation,
     ...lecture.Mutation,
     ...lectureContent.Mutation,
     ...user.Mutation,
