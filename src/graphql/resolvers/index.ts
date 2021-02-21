@@ -11,12 +11,15 @@ export default {
     ...course.Query,
     ...courseDetail.Query,
     ...lecture.Query,
-    ...user.Query,
     ...lectureContent.Query,
+    ...user.Query,
   },
   Mutation: {
+    // ...category.Mutation,
     ...course.Mutation,
+    // ...courseDetail.Mutation,
     ...lecture.Mutation,
+    ...lectureContent.Mutation,
     ...user.Mutation,
   },
 };

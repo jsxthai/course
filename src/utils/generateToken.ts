@@ -14,20 +14,21 @@ export const generateToken = (user: any) => {
   );
 };
 
-(() => {
-  const t = jwt.sign(
-    {
-      id: 1,
-      role: "user",
-    },
-    String(SECRET_KEY),
-    {
-      expiresIn: "1h",
-    }
-  );
-  console.log(`token test for  {
-      id: 1,
-      role: "user",
-    }`);
-  console.log(t);
-})();
+// test
+// (() => {
+//   const t = jwt.sign(
+//     {
+//       id: 1,
+//       role: "user",
+//     },
+//     String(SECRET_KEY),
+//     {
+//       expiresIn: "1h",
+//     }
+//   );
+//   console.log(`token test for  {
+//       id: 1,
+//       role: "user",
+//     }`);
+//   console.log(t);
+// })();

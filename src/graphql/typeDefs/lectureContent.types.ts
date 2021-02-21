@@ -8,8 +8,23 @@ export default gql`
     document: String!
     lectureId: ID!
   }
+  input LectureContentInput {
+    name: String
+    video: String
+    document: String
+  }
 
   extend type Query {
-    getLectureContent(lectureId: ID!): [LectureContent!]!
+    lectureContent(lectureId: ID!): [LectureContent!]!
+    lectureContents: [LectureContent!]!
+  }
+
+  extend type Mutation {
+    createLectureContent(
+      lectureId: ID!
+      payload: LectureContentInput!
+    ): Response!
+    updateLectureContent(id: ID!, payload: LectureContentInput!): Response!
+    deleteLectureContent(id: ID!): Response!
   }
 `;
