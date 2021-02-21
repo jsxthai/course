@@ -13,6 +13,12 @@ const typeDefs = gql`
     categories: [Category!]!
     category(id: ID!, name: String): Category!
   }
+
+  extend type Mutation {
+    createCategory(name: String!): Response!
+    updateCategory(id: ID!, name: String): Response!
+    deleteCategory(id: ID!): Response!
+  }
 `;
 
 export default typeDefs;
