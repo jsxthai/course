@@ -6,6 +6,7 @@ const typeDefs = gql`
     name: String!
     email: String!
     courses: [Course]
+    role: String!
     createdAt: String
     updatedAt: String
   }

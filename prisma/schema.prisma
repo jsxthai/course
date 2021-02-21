@@ -40,27 +40,27 @@ model Course {
 }
 
 model CourseDetail {
-  id       Int    @id @default(autoincrement())
+  id       Int     @id @default(autoincrement())
   text     String
-  Course   Course @relation(fields: [courseId], references: [id])
-  courseId Int
+  Course   Course? @relation(fields: [courseId], references: [id])
+  courseId Int?
 }
 
 model Lecture {
   id       Int              @id @default(autoincrement())
   text     String
   content  LectureContent[]
-  Course   Course           @relation(fields: [courseId], references: [id])
-  courseId Int
+  Course   Course?          @relation(fields: [courseId], references: [id])
+  courseId Int?
 }
 
 model LectureContent {
-  id        Int     @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   name      String?
   video     String
   document  String?
-  Lecture   Lecture @relation(fields: [lectureId], references: [id])
-  lectureId Int
+  Lecture   Lecture? @relation(fields: [lectureId], references: [id])
+  lectureId Int?
 }
 
 model Category {
@@ -68,6 +68,5 @@ model Category {
   name      String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
-
-  Course Course[]
+  Course    Course[]
 }
