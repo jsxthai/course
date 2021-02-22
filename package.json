@@ -35,5 +35,8 @@
     "graphql-tag": "^2.11.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   }
 }
