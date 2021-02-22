@@ -14,4 +14,8 @@ RUN npm install -g prisma
 
 RUN prisma generate
 
+RUN npm run db:migrate:deploy
+
+RUN npm run db:seed
+
 CMD ["npm", "run", "start:prod"]
