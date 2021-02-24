@@ -8,6 +8,7 @@ const typeDefs = gql`
     authorId: ID
     createdAt: String!
     updatedAt: String!
+    user: User
   }
 
   input CreateCourseInput {

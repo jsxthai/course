@@ -4,7 +4,15 @@ import { authJwt } from "./../../utils/authToken";
 export default {
   Query: {
     courses: async () => {
-      return await prisma.course.findMany();
+      return await prisma.course.findMany({
+        include: {
+          user: {
+            include: {
+              courses: true,
+            },
+          },
+        },
+      });
     },
   },
   Mutation: {
