@@ -15,8 +15,8 @@ export default [
     price: 0,
     authorId: 2,
     description:
-      "This Python For Beginners Course Teaches You The Python Language Fast.",
-    categoryId: 1,
+      "Python For Beginners Course Teaches You The Python Language Fast.",
+    categoryId: 3,
     image:
       "https://img-a.udemycdn.com/course/240x135/629302_8a2d_2.jpg?1yB2rVOwjpS2Xnh148N3tJMIqBw8xXbQVfBZFjGj4FLZ-5rX806qYLhdKJo0xyl9haTXOsOoLMHlSDR4t2NYvPmGJ0uHZCpZ4yVzaU9uQP2V1AHAEzspu_QGcEPs",
   },
@@ -27,7 +27,7 @@ export default [
     authorId: 2,
     description:
       "Learn a modern, powerful yet safe systems programming language!",
-    categoryId: 1,
+    categoryId: 3,
     image:
       "https://img-b.udemycdn.com/course/240x135/624252_3505_3.jpg?secure=_w8vHPuUqQobGdCV0HiFKw%3D%3D%2C1614236720",
   },
@@ -43,11 +43,10 @@ export default [
   },
   {
     id: 5,
-    name: "Java Swing (GUI) ",
+    name: "Java Swing (GUI)",
     price: 0,
     authorId: 2,
-    description:
-      "Learn how to create desktop and Internet GUI Java programs and take your Java programming to the next level.",
+    description: "Learn how to create desktop and Internet GUI Java programs ",
     categoryId: 1,
     image:
       "https://img-b.udemycdn.com/course/240x135/18237_c39e_10.jpg?secure=K-WCQYQCIFN8Q-ABQ2xtYw%3D%3D%2C1614297064",
@@ -57,9 +56,8 @@ export default [
     name: "Learn To Program with Pascal",
     price: 0,
     authorId: 2,
-    description:
-      "Master programming on Windows or Mac OS X with Lazarus & Free Pascal or Delphi",
-    categoryId: 1,
+    description: "Master programming on Windows or Mac OS X with Lazarus",
+    categoryId: 3,
     image:
       "https://img-a.udemycdn.com/course/240x135/24422_c7bf_4.jpg?6UVypef8MlTRUHZ_NGtKkaHJ7g6O1_nn8WfvZ8kp1pfwva7pj4eUENTfxNylcWPfCmrKub01xlTH55CiWdTu4QJeIdQWHWjmuo-qeFrfAAGmBdUEgFiiMvp6ngpGKQ",
   },
@@ -69,8 +67,8 @@ export default [
     price: 0,
     authorId: 2,
     description:
-      "Designed for people who don't have any knowledge about the programming and want to program in C++",
-    categoryId: 1,
+      "Designed for people who don't have any knowledge about the programming",
+    categoryId: 3,
     image:
       "https://img-a.udemycdn.com/course/240x135/43718_e5ca_10.jpg?LKpXYsdNgdCmS8b3X0kC5NVU_Rkss4lXiz2K6LnEvAH2kMoMKa7MZ8N4fb20N0bbjxC9Oy9HfMSEBqsYc2SZj5ftN9FA6qQuTabcIdxrqUX8ukM_BTG---M0uKYIdXI",
   },
@@ -80,7 +78,7 @@ export default [
     price: 0,
     authorId: 2,
     description: "Learning to code C#? We have provided HD video lectures",
-    categoryId: 1,
+    categoryId: 2,
     image:
       "https://img-a.udemycdn.com/course/240x135/111712_d7d9_7.jpg?IdSqJvkHL1sm6nTZtNAHV8dHZSCrqF8w4An5v2kpjLOcfBiqy2bNS-vCtckyUMjdbcuMITnnQQhMtbT8MTw-u6_qSSZysoPV8Qz45XTESf9saPyfDhbFboXmyi3seE0",
   },

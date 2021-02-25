@@ -48,6 +48,7 @@ export default {
 
       // validate password
       const math = await bcrypt.compare(password, user.password);
+
       if (!math) {
         errors.general = "Wrong crendetials";
         throw new UserInputError("ERROR", { errors });
