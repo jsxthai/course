@@ -5,6 +5,7 @@ export default gql`
     id: ID!
     text: String!
     courseId: ID!
+    content: [LectureContent]
   }
 
   extend type Query {

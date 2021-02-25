@@ -1,3 +1,4 @@
+import { Course } from "@prisma/client";
 import gql from "graphql-tag";
 
 const typeDefs = gql`
@@ -5,10 +6,15 @@ const typeDefs = gql`
     id: ID!
     name: String!
     price: Float!
+    description: String
     authorId: ID
     createdAt: String!
     updatedAt: String!
     user: User
+    lecture: [Lecture]
+    CourseDetail: [CourseDetail]
+    categories: Category
+    image: String
   }
 
   input CreateCourseInput {
@@ -19,6 +25,7 @@ const typeDefs = gql`
 
   extend type Query {
     courses: [Course!]!
+    course(id: ID!): [Course!]!
   }
 
   extend type Mutation {

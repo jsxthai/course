@@ -1,14 +1,14 @@
 export default [
   {
-    id: 1,
     name: "Java",
     price: 22.9,
     authorId: 1,
     description: "Java course",
     categoryId: 1,
+    image:
+      "https://www.google.com/url?sa=i&url=http%3A%2F%2Fqnimate.com%2Funderstanding-html-img-tag%2F&psig=AOvVaw09YN7yvTYGfU7mmbFup6jZ&ust=1614329218355000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjk9I7ThO8CFQAAAAAdAAAAABAI",
   },
   {
-    id: 2,
     name: "Python",
     price: 10.9,
     authorId: 1,
@@ -16,7 +16,41 @@ export default [
     categoryId: 2,
   },
   {
-    id: 3,
+    name: "Rust",
+    price: 30.9,
+    authorId: 2,
+    description: "Is rust course",
+    categoryId: 2,
+  },
+  {
+    name: "Rust",
+    price: 30.9,
+    authorId: 2,
+    description: "Is rust course",
+    categoryId: 2,
+  },
+  {
+    name: "Rust",
+    price: 30.9,
+    authorId: 2,
+    description: "Is rust course",
+    categoryId: 2,
+  },
+  {
+    name: "Rust",
+    price: 30.9,
+    authorId: 2,
+    description: "Is rust course",
+    categoryId: 2,
+  },
+  {
+    name: "Rust",
+    price: 30.9,
+    authorId: 2,
+    description: "Is rust course",
+    categoryId: 2,
+  },
+  {
     name: "Rust",
     price: 30.9,
     authorId: 2,

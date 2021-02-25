@@ -1,16 +1,31 @@
+import { Course, User } from "@prisma/client";
 import prisma from "../../config/prisma";
 import { authJwt } from "./../../utils/authToken";
 
 export default {
   Query: {
     courses: async () => {
-      return await prisma.course.findMany({
+      let result = await prisma.course.findMany({
         include: {
-          user: {
+          user: true,
+        },
+      });
+      return result;
+    },
+    course: async (_: any, args: any) => {
+      return await prisma.course.findMany({
+        where: {
+          id: Number(args.id),
+        },
+        include: {
+          CourseDetail: true,
+          lecture: {
             include: {
-              courses: true,
+              content: true,
             },
           },
+          categories: true,
+          user: true,
         },
       });
     },
