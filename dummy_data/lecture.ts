@@ -1,12 +1,17 @@
 export default [
   {
     id: 1,
-    text: "Bai 1 Hello world",
+    text: "Course Introduction",
     courseId: 1,
   },
   {
     id: 2,
-    text: "Bai 2 function",
+    text: "Software Setup",
+    courseId: 1,
+  },
+  {
+    id: 3,
+    text: "Frist Steps",
     courseId: 1,
   },
 ];
