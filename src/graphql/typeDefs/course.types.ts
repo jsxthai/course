@@ -1,4 +1,3 @@
-import { Course } from "@prisma/client";
 import gql from "graphql-tag";
 
 const typeDefs = gql`
