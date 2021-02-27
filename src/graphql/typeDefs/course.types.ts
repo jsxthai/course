@@ -22,9 +22,15 @@ const typeDefs = gql`
     authorId: ID!
   }
 
+  type SearchResponse {
+    courses: [Course!]!
+    count: Int!
+  }
+
   extend type Query {
     courses: [Course!]!
     course(id: ID!): [Course!]!
+    search(filter: String!): [Course!]!
   }
 
   extend type Mutation {

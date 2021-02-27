@@ -36,7 +36,7 @@ export default [
     name: "Learn C# Programming",
     price: 0,
     authorId: 2,
-    description: "The simplest way to learn C# programming.",
+    description: "The simplest way to learn C# programming language!.",
     categoryId: 1,
     image:
       "https://img-b.udemycdn.com/course/240x135/14346_9972_8.jpg?secure=W_Rlx67FKyuiDNsjmh-VFQ%3D%3D%2C1614297618",

@@ -1,4 +1,4 @@
-import { Course, User } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import prisma from "../../config/prisma";
 import { authJwt } from "./../../utils/authToken";
 
@@ -12,6 +12,40 @@ export default {
       });
       return result;
     },
+    search: async (parent: any, args: any, context: any) => {
+      const where: Prisma.CourseWhereInput | undefined = {
+        OR: [
+          {
+            name: {
+              contains: args.filter,
+              mode: "insensitive", //
+            },
+          },
+          {
+            description: {
+              contains: args.filter,
+              mode: "insensitive", //
+            },
+          },
+        ],
+      };
+      return await prisma.course.findMany({
+        where,
+        include: {
+          CourseDetail: true,
+          lecture: {
+            include: {
+              content: true,
+            },
+          },
+          categories: true,
+          user: true,
+        },
+      });
+
+      // const count = await prisma.course.count({ where });
+    },
+
     course: async (_: any, args: any) => {
       return await prisma.course.findMany({
         where: {
