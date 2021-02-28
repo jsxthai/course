@@ -16,32 +16,32 @@ export default [
   },
   {
     id: 4,
-    text: "Frist Steps",
+    text: "Introduction",
     courseId: 2,
   },
   {
     id: 5,
-    text: "Second Steps",
+    text: "Python Flow Control",
     courseId: 2,
   },
   {
     id: 6,
-    text: "Frist Steps",
+    text: "Rust begin",
     courseId: 3,
   },
   {
     id: 7,
-    text: "Second Steps",
+    text: "Rust vs Go",
     courseId: 3,
   },
   {
     id: 8,
-    text: "Frist Steps",
+    text: "Should learn C#?",
     courseId: 4,
   },
   {
     id: 9,
-    text: "Second Steps",
+    text: "The MANY things you can build with C#",
     courseId: 4,
   },
   {

@@ -18,13 +18,21 @@ export default {
           {
             name: {
               contains: args.filter,
-              mode: "insensitive", //
+              mode: "insensitive",
             },
           },
           {
             description: {
               contains: args.filter,
-              mode: "insensitive", //
+              mode: "insensitive",
+            },
+          },
+          {
+            categories: {
+              name: {
+                contains: args.filter,
+                mode: "insensitive",
+              },
             },
           },
         ],

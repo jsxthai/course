@@ -5,7 +5,7 @@ export default [
     price: 0,
     authorId: 2,
     description: "Java Programming Masterclass for Software Developers",
-    categoryId: 1,
+    categoryId: 2,
     image:
       "https://img-a.udemycdn.com/course/240x135/533682_c10c_4.jpg?Ex5-mo2mzJKLtnqEE1PZiCwJKk55-oU6mMDrz-5QIWYIsHuZtQLwGXGZFb-WrNbHT5ptPM8bvbn1_aLcZrMwfXWwlZ7hLF5ycBYu17xMnlrH5wncbl8EH8fhD2AG",
   },
@@ -37,7 +37,7 @@ export default [
     price: 0,
     authorId: 2,
     description: "The simplest way to learn C# programming language!.",
-    categoryId: 1,
+    categoryId: 2,
     image:
       "https://img-b.udemycdn.com/course/240x135/14346_9972_8.jpg?secure=W_Rlx67FKyuiDNsjmh-VFQ%3D%3D%2C1614297618",
   },
@@ -78,7 +78,7 @@ export default [
     price: 0,
     authorId: 2,
     description: "Learning to code C#? We have provided HD video lectures",
-    categoryId: 2,
+    categoryId: 1,
     image:
       "https://img-a.udemycdn.com/course/240x135/111712_d7d9_7.jpg?IdSqJvkHL1sm6nTZtNAHV8dHZSCrqF8w4An5v2kpjLOcfBiqy2bNS-vCtckyUMjdbcuMITnnQQhMtbT8MTw-u6_qSSZysoPV8Qz45XTESf9saPyfDhbFboXmyi3seE0",
   },
